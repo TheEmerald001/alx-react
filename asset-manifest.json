@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/css/main.91631360.css",
+    "main.js": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/js/main.3eb783cd.js",
+    "static/js/787.545aecf5.chunk.js": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/js/787.545aecf5.chunk.js",
+    "static/media/logo.jpg": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/media/logo.24bab5d633e36ca8d17e.jpg",
+    "index.html": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/index.html",
+    "main.91631360.css.map": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/css/main.91631360.css.map",
+    "main.3eb783cd.js.map": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/js/main.3eb783cd.js.map",
+    "787.545aecf5.chunk.js.map": "/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4/static/js/787.545aecf5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91631360.css",
+    "static/js/main.3eb783cd.js"
+  ]
+}
