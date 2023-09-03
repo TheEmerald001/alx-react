@@ -11,10 +11,11 @@ export default function App() {
 
       <div className="App-body">
         <p>Login to access the full dashboard</p>
-        <label htmlFor="email">Email: </label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="password">Password: </label>
-        <input type="password" id="password" name="password" />
+        <label style={{margin: "3px"}} htmlFor="email">Email: </label>
+        <input style={{margin: "3px"}} type="email" id="email" name="email" />
+        <label style={{margin: "3px"}} htmlFor="password">Password: </label>
+        <input style={{margin: "3px"}} type="password" id="password" name="password" />
+        <button style={{margin: "3px"}}>OK</button>
       </div>
 
       <footer className="App-footer">
