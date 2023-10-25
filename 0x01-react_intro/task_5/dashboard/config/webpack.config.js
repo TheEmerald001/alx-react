@@ -1,53 +1,53 @@
-const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  plugins: [
-    new HTMLWebpackPlugin({
-      filename: "./index.html",
-    }),
-    new CleanWebpackPlugin(),
-  ],
-  devtool: "inline-source-map",
-  mode: "development",
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    filename: "bundle.js",
   },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
-  },
-  devServer: {
-    static: path.join(__dirname, "./public"),
-    open: true,
-    port: 8564,
-  },
-  performance: {
-    maxAssetSize: 1000000,
-  },
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["css-loader", "style-loader"],
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(?:ico|gif|png|jpe?g|svg)$/i,
-        type: "asset/resource",
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [
           "file-loader",
           {
             loader: "image-webpack-loader",
             options: {
-              bypassingOnDebug: true,
+              bypassOnDebug: true,
               disable: true,
             },
           },
         ],
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
     ],
   },
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+  },
+  devServer: {
+    static: "./dist",
+    compress: true,
+    open: true,
+    hot: true,
+    port: 8564,
+  },
+  devtool: "inline-source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      name: "index.html",
+      inject: false,
+      template: "./dist/index.html",
+    }),
+  ],
 };
