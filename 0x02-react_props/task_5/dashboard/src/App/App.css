@@ -1,0 +1,21 @@
+:root {
+  --holberton-red: #e1484c;
+}
+
+body {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+div {
+  padding: 2px 8px;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.App-body p {
+  margin: 48px 0 0 32px;
+}
