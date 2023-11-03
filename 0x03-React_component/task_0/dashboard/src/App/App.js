@@ -25,7 +25,11 @@ class App extends React.Component {
         <div className="App">
           <Header />
           <div className="App-body">
-            {this.props.isLoggedIn ? <CourseList listCourses={this.listCourses} /> : <Login />}
+            {this.props.isLoggedIn ? (
+              <CourseList listCourses={this.listCourses} />
+            ) : (
+              <Login />
+            )}
           </div>
           <footer className="App-footer">
             <Footer />
