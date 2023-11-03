@@ -7,6 +7,8 @@ import Header from "../Header/Header";
 import PropTypes from "prop-types";
 import CourseList from "../CourseList/CourseList";
 import { getLatestNotification } from "../utils/utils";
+import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
+import BodySection from "../BodySection/BodySection";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class App extends React.Component {
     { id: 2, type: "urgent", value: "New resume available" },
     { id: 3, type: "urgent", html: getLatestNotification() },
   ];
-  componentDidMount(){
+  componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
   }
 
@@ -36,7 +38,7 @@ class App extends React.Component {
       alert("Logging you out");
       this.props.logOut();
     }
-  }
+  };
   render() {
     return (
       <React.Fragment>
@@ -46,10 +48,19 @@ class App extends React.Component {
             <Header />
           </div>
           {this.props.isLoggedIn ? (
-            <CourseList listCourses={this.listCourses} />
+            <BodySectionWithMarginBottom title="Course list">
+              <CourseList listCourses={this.listCourses} />
+            </BodySectionWithMarginBottom>
           ) : (
+            <BodySectionWithMarginBottom title="Log in to continue">
             <Login />
+            </BodySectionWithMarginBottom>
           )}
+          <BodySection title="News from the school">
+            <p>
+              Wewe ni champe wa mashinanai kijana..
+            </p>
+          </BodySection>
           <Footer />
         </div>
       </React.Fragment>
@@ -59,7 +70,7 @@ class App extends React.Component {
 
 App.defaultProps = {
   isLoggedIn: false,
-  logOut: () => {}
+  logOut: () => {},
 };
 
 App.propType = {
