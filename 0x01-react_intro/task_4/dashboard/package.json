@@ -11,7 +11,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/TheEmerald001/alx-react/tree/main/0x01-react_intro/task_4",
+  "homepage": "https://theemerald001.github.io/alx-react",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
