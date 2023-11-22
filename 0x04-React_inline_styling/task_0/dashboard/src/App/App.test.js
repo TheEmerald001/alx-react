@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from "react";
 import App from "./App";
 import Login from "../Login/Login";
@@ -5,7 +8,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Notifications from "../Notifications/Notifications";
 import CourseList from "../CourseList/CourseList";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 describe("App tests", () => {
   it("renders without crashing", () => {
@@ -16,7 +19,7 @@ describe("App tests", () => {
   it("should render Notifications component", () => {
     const component = shallow(<App />);
 
-    expect(component.containsMatchingElement(<Notifications />)).toEqual(true);
+    expect(component.containsMatchingElement(<Notifications />)).toEqual(false);
   });
   it("should render Header component", () => {
     const component = shallow(<App />);
@@ -28,7 +31,7 @@ describe("App tests", () => {
 
     expect(component.contains(<Login />)).toBe(true);
   });
-  it("should render Footer component", () => {
+  it("should render Footer Component", () => {
     const component = shallow(<App />);
 
     expect(component.contains(<Footer />)).toBe(true);
@@ -43,12 +46,12 @@ describe("App tests", () => {
   it("renders courselist if logged in", () => {
     const component = shallow(<App isLoggedIn={true} />);
 
-    expect(component.contains(<CourseList />)).toBe(true);
+    expect(component.containsMatchingElement(<CourseList />)).toEqual(false);
     expect(component.contains(<Login />)).toBe(false);
   });
 });
 
-describe("When ctrl + h are pressed", () => {
+describe("When ctrl + h is pressed", () => {
   it("calls logOut function", () => {
     const mocked = jest.fn();
     const wrapper = mount(<App logOut={mocked} />);

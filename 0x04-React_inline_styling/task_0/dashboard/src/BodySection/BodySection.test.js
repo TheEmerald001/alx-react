@@ -2,7 +2,7 @@ import React from "react";
 import BodySection from "./BodySection";
 import { shallow } from "enzyme";
 
-describe("<BodySection /> tests", () => {
+describe("BodySection tests", () => {
   it("should render correctly", () => {
     const wrapper = shallow(
       <BodySection title="test title">

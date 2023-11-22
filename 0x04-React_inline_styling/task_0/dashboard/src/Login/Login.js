@@ -1,23 +1,21 @@
 import React from "react";
 import "./Login.css";
-export default function Login() {
+
+function Login() {
   return (
-    <>
-      <p>Login to access the full dashboard</p>
-      <label style={{ margin: "3px" }} htmlFor="email">
-        Email:{" "}
-      </label>
-      <input style={{ margin: "3px" }} type="email" id="email" name="email" />
-      <label style={{ margin: "3px" }} htmlFor="password">
-        Password:{" "}
-      </label>
-      <input
-        style={{ margin: "3px" }}
-        type="password"
-        id="password"
-        name="password"
-      />
-      <button style={{ margin: "3px" }}>OK</button>
-    </>
+    <React.Fragment>
+      <div className="App-body">
+        <p>Login to access the full dashboard</p>
+        <form>
+          <label htmlFor="email">Email:</label>
+          <input type="email" name="email"></input>
+          <label htmlFor="password">Password:</label>
+          <input type="password" name="password"></input>
+          <button>OK</button>
+        </form>
+      </div>
+    </React.Fragment>
   );
 }
+
+export default Login;
